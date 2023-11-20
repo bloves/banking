@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users'); 
             $table->string('debit')->default(0);
             $table->string('credit')->default(0);
-            $table->bigInteger('toUser')->nullable();
+            $table->bigInteger('transferred')->nullable();
             $table->string('balance')->default(0);
             $table->timestamps();
         });
