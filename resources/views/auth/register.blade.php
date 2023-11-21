@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <h2 style="text-align: center;"> ABC BANK </h2>
+
         <div class="col-md-4">
             <div class="container">
 
