@@ -12,36 +12,38 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app" class="h-100">
+
         @auth
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">        
             <div class="container" style="width:800px; margin:0 auto;">
                 <h4 style="text-align: center;"> ABC BANK </h4>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href={{route('home')}}>Home </a>
+                        <a class="nav-link" href={{route('home')}}><i class="fa fa-home"></i> Home </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href={{route('deposit')}}>Deposit</a>
+                        <a class="nav-link" href={{route('deposit')}}><i class="fa fa-upload"></i> Deposit</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href={{route('withdraw')}}>Withdraw</a>
+                        <a class="nav-link" href={{route('withdraw')}}><i class="fa fa-download"></i> Withdraw</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href={{route('transfer')}}>Transfer</a>
+                        <a class="nav-link" href={{route('transfer')}}><i class="fa fa-exchange"></i> Transfer</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href={{route('statement')}}>Statement</a>
+                        <a class="nav-link" href={{route('statement')}}><i class="fa fa-file-word-o"></i> Statement</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
+                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>
                             {{ __('Logout') }}
                         </a>
 
@@ -51,52 +53,7 @@
                       </li>
                     </ul>
                   </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            {{-- @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
-                        @else
-                            {{-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li> --}}
-                        @endguest
-                    </ul>
-                </div>
+             
             </div>
         </nav>
         @endauth
